@@ -8,5 +8,5 @@ export function buscarNotas(notas, vista, consulta = '') {
   const termino = consulta.trim().toLocaleLowerCase('es');
   const enVista = notas.filter(nota => nota.archivada === (vista === 'archivo'));
   if (!termino) return enVista;
-  return notas.filter(nota => (nota.titulo + ' ' + nota.cuerpo).toLocaleLowerCase('es').includes(termino));
+  return enVista.filter(nota => (nota.titulo + ' ' + nota.cuerpo).toLocaleLowerCase('es').includes(termino));
 }
